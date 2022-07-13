@@ -1,15 +1,16 @@
 const express = require("express")
 const router = express.Router()
 const {
-  getPeople,
-  createPerson,
-  createPersonPostman,
-  updatePerson,
-  deletePerson,
-} = require("../controllers/peopleController")
+  getTasks,
+  createTask,
+  createTaskPostman,
+  updateTask,
+  deleteTask,
+  getTask,
+} = require("../controllers/taskController")
 
-router.route("/").get(getPeople).post(createPerson)
-router.route("/postman").post(createPersonPostman)
-router.route("/:id").put(updatePerson).delete(deletePerson)
+router.route("/").get(getTasks).post(createTask)
+router.route("/postman").post(createTaskPostman)
+router.route("/:id").get(getTask).put(updateTask).delete(deleteTask)
 
 module.exports = router
